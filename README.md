@@ -19,3 +19,43 @@ PR curves in our paper are stored in Curves/.
 
 ## Data Format
 ### train.json & test.json
+```
+[
+    {
+        "head": {
+            "CUI": "C0032594",
+            "word": "polysaccharide",
+            "start": 6,
+            "length": 14,
+            "split_start": 1
+        },
+        "tail": {
+            "CUI": "C0007289",
+            "word": "carrageenin",
+            "start": 35,
+            "length": 11,
+            "split_start": 4
+        },
+        "sentence": "algal polysaccharide obtained from carrageenin protects 80 to 100 percent of chicken embryos against fatal infections with the lee strain of influenza virus .",
+        "relation": "NA",
+        "lexical_feature0": "algal|polysaccharide|obtained|from|carrageenin|protects",
+        "lexical_feature1": "PAD|algal|polysaccharide|obtained|from|carrageenin|protects|80",
+        "lexical_feature2": "PAD|PAD|algal|polysaccharide|obtained|from|carrageenin|protects|80|to",
+        "syntactic_feature0": "polysaccharide|0|root",
+        "syntactic_feature1": "obtained|1|acl",
+        "syntactic_feature2": "from|4|case",
+        "syntactic_feature3": "carrageenin|2|obl"
+    },
+    ...
+]
+```
+
+### relation2id.json
+```
+{
+    "NA": 0,
+    "active_metabolites_of": 1,
+    ...
+}
+```
+
