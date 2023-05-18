@@ -8,11 +8,23 @@ Please cite our paper if our datasets or code are helpful to you ~
 * Pytorch 1.4.0+
 
 ## Dataset
-* Biorel ( https://bit.ly/biorel_dataset)
+* Biorel (https://bit.ly/biorel_dataset)
 * TBGA (https://zenodo.org/record/5911097)
+
+## Before Training
+We need to convert all TBGA dataset to Biorel format.
+
+You can get pretrained word embeddings(biowordvec_mat.npy and biowordvec_word2id.json) of TBGA at (https://github.com/GDAMining/gda-extraction).
+
+Then, run the processing file：
+
+cd ./data
+python process_tbga.py
+
 
 ## Training & Evaluation
 python train.py
+
 python value.py
 
 ## Results
