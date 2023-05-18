@@ -8,17 +8,18 @@ Please cite our paper if our datasets or code are helpful to you ~
 * Pytorch 1.4.0+
 
 ## Dataset
-* Biorel (https://bit.ly/biorel)
+* Biorel ( https://bit.ly/biorel\_dataset)
 * TBGA (https://zenodo.org/record/5911097)
 
 ## Training & Evaluation
 python train.py
+python value.py
 
 ## Results
 PR curves in our paper are stored in Curves/.
 
 ## Data Format
-### train.json & test.json
+### train.json & dev.json &test.json
 ```
 [
     {
