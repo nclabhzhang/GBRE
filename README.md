@@ -18,8 +18,10 @@ You can get pretrained word embeddings(biowordvec_mat.npy and biowordvec_word2id
 
 Then, run the processing file：
 
+```bash
 cd ./data
 python process_tbga.py
+```
 
 
 ## Training & Evaluation
