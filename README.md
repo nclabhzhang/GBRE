@@ -8,7 +8,7 @@ Please cite our paper if our datasets or code are helpful to you ~
 * Pytorch 1.4.0+
 
 ## Dataset
-* Biorel ( https://bit.ly/biorel\_dataset)
+* Biorel ( https://bit.ly/biorel_dataset)
 * TBGA (https://zenodo.org/record/5911097)
 
 ## Training & Evaluation
