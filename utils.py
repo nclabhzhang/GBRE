@@ -1,3 +1,10 @@
+import os
+import sys
+import torch
+import random
+import logging
+import numpy as np
+
 class AverageMeter(object):
     """
     Computes and stores the average and current value of metrics.
@@ -27,3 +34,10 @@ class AverageMeter(object):
             return str(self.val)
         # for stats
         return '%.4f (%.4f)' % (self.val, self.avg)
+
+def setup_seed(seed):
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.backends.cudnn.deterministic = True
