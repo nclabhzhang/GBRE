@@ -6,18 +6,18 @@ Please cite our paper if our datasets or code are helpful to you ~
 ## Requirements
 * Python 3.7
 * Pytorch 1.12.0
-* transformers 3.0.0
+* Transformers 3.0.0
 
 ## Dataset
 * Biorel (https://bit.ly/biorel_dataset)
 * TBGA (https://zenodo.org/record/5911097)
 
 ## Before Training
-We need to convert all TBGA dataset to Biorel format.
+If you want to use TBGA dataset for training GBRE, please convert all the data to Biorel format.
 
-You can get pretrained word embeddings(biowordvec_mat.npy and biowordvec_word2id.json) of TBGA at (https://github.com/GDAMining/gda-extraction).
+You can get the pretrained word embeddings (biowordvec_mat.npy and biowordvec_word2id.json) of TBGA at (https://github.com/GDAMining/gda-extraction).
 
-Then, run the processing file：
+After making sure all files are in ./data/TBGA, run the processing file：
 
 ```bash
 cd ./data
