@@ -83,7 +83,6 @@ if __name__ == '__main__':
 
     # F1_score
     print("\n\n[TEST] F1 score: ", metrics.f1_score(x_label, x_pred, labels=None, pos_label=1, average='weighted'))
-    print("\n\n[TEST] F1 score: ", metrics.f1_score(x_label, x_pred, labels=None, pos_label=1, average='weighted'))
 
     # AUC
     auc = metrics.average_precision_score(y_true, y_pred)
