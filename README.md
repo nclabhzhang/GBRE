@@ -26,9 +26,9 @@ python process_tbga.py
 
 
 ## Training & Evaluation
-python train.py
+CUDA_VISIBLE_DEVICES=0 python train.py
 
-python value.py
+CUDA_VISIBLE_DEVICES=0 python value.py
 
 ## Results
 PR curves in our paper are stored in Curves/.
