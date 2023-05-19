@@ -4,8 +4,9 @@ This repository provides the implemention for the paper Sentence Bag Graph Formu
 Please cite our paper if our datasets or code are helpful to you ~
 
 ## Requirements
-* Python 3.6+
-* Pytorch 1.4.0+
+* Python 3.7
+* Pytorch 1.12.0
+* transformers 3.0.0
 
 ## Dataset
 * Biorel (https://bit.ly/biorel_dataset)
@@ -66,7 +67,6 @@ PR curves in our paper are stored in Curves/.
 ```
 
 
-
 ### relation2id.json
 ```
 {
@@ -75,6 +75,18 @@ PR curves in our paper are stored in Curves/.
     ...
 }
 ```
+
+
+### word2vec.json
+```
+[
+    {"word": "a", "vec": [0.0023810673, 0.23303464, ...]},
+    {"word": "monocyte", "vec": [0.13468756, -0.18540461, ...]},
+    ...
+]
+```
+
+
 
 ## Cite
 
