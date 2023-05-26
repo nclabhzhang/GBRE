@@ -28,7 +28,7 @@ def config():
 
     parser.add_argument('--max_sentence_length', default=120, type=int)
     parser.add_argument('--max_pos_length',      default=100, type=int)
-    parser.add_argument('--max_question_length', default=24, type=int)
+    parser.add_argument('--max_query_length', default=24, type=int)
 
     parser.add_argument('--hidden_size', default=230, type=int)
     parser.add_argument('--pos_dim',     default=5,   type=int, help='position embedding dimension')

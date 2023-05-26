@@ -19,7 +19,7 @@ class Bag:
         self.mask_q = []
         self.length = []
         self.rel = []
-        self.question = []
+        self.query = []
 
 
 class Dataset(data.Dataset):
@@ -78,7 +78,7 @@ class Dataset(data.Dataset):
         self.vec_dir = os.path.join(self.dataset, opt['vec'])
         self.max_pos_length = opt['max_pos_length']
         self.max_sentence_length = opt['max_sentence_length']
-        self.max_question_length = opt['max_question_length']
+        self.max_query_length = opt['max_query_length']
         self.bag_size = opt['bag_size']
         self.training = training
         self.vec_save_dir = os.path.join(self.processed_data_dir, 'word_vec.npy')
@@ -191,16 +191,16 @@ class Dataset(data.Dataset):
         bag.pos1.append(_pos1.tolist())
         bag.pos2.append(_pos2.tolist())
 
-        # question
+        # query
         ent1 = ins['head']['word']
         ent2 = ins['tail']['word']
         auto_que = f'what is the relation between {ent1} and {ent2} ?'.split()
         que_ids = [self.word2id[word] if word in self.word2id else self.word2id['[UNK]'] for word in auto_que]
         que_len = len(que_ids)
-        for i in range(self.max_question_length - que_len):
+        for i in range(self.max_query_length - que_len):
             que_ids.append(0)  # Padding
-        que_ids = que_ids[:self.max_question_length]
-        bag.question.append(que_ids)
+        que_ids = que_ids[:self.max_query_length]
+        bag.query.append(que_ids)
 
         # mask
         p1, p2 = sorted((p1, p2))
@@ -263,20 +263,20 @@ class Dataset(data.Dataset):
         bag.pos1.append(p1)
         bag.pos2.append(p2)
 
-        # question
+        # query
         ent1 = ins['head']['word']
         ent2 = ins['tail']['word']
         auto_que = f'what is the relation between {ent1} and {ent2} ?'.split()
-        question = self.tokenizer.tokenize(' '.join(auto_que))
-        que_tokens = question + ['[SEP]']
+        query = self.tokenizer.tokenize(' '.join(auto_que))
+        que_tokens = query + ['[SEP]']
         que_ids = self.tokenizer.convert_tokens_to_ids(que_tokens)
         que_len = len(que_ids)
-        for i in range(self.max_question_length - que_len):
+        for i in range(self.max_query_length - que_len):
             que_ids.append(0)  # Padding
-        que_ids = que_ids[:self.max_question_length]
-        bag.question.append(que_ids)
-        # question_mask
-        _mask_q = np.zeros(self.max_question_length, dtype=np.long)
+        que_ids = que_ids[:self.max_query_length]
+        bag.query.append(que_ids)
+        # query_mask
+        _mask_q = np.zeros(self.max_query_length, dtype=np.long)
         _mask_q[:que_len] = 1
         bag.mask_q.append(_mask_q.tolist())
 
@@ -326,7 +326,7 @@ class Dataset(data.Dataset):
         pos1 = torch.tensor(bag.pos1, dtype=torch.long)[select]
         pos2 = torch.tensor(bag.pos2, dtype=torch.long)[select]
         mask = torch.tensor(bag.mask, dtype=torch.long)[select]
-        que = torch.tensor(bag.question, dtype=torch.long)[select]
+        que = torch.tensor(bag.query, dtype=torch.long)[select]
         length = torch.tensor(bag.length, dtype=torch.long)[select]
         if self.training:
             rel = torch.tensor(bag.rel[0], dtype=torch.long)

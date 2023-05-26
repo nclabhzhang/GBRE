@@ -41,39 +41,28 @@ class Model(nn.Module):
         if self.encoder_name == 'CNN':
             self.encoder = CNN(emb_dim, hidden_size)
             self.rel = nn.Linear(hidden_size, rel_num)
-
         elif self.encoder_name == 'PCNN':
             self.encoder = PCNN(emb_dim, hidden_size)
             self.rel = nn.Linear(hidden_size * 3, rel_num)
-
-        elif self.encoder_name.lower() == 'biobert':
-            self.encoder = BioBERT(out_dim, dataset)
-            self.rel = nn.Linear(out_dim, rel_num)
-
         elif self.encoder_name == 'BiGRU':
             self.encoder = BiGRU(emb_dim, hidden_size)
             self.rel = nn.Linear(hidden_size * 2, rel_num)
-
         elif self.encoder_name == 'BiLSTM':
             self.encoder = BiLSTM(emb_dim, hidden_size)
             self.rel = nn.Linear(hidden_size * 2, rel_num)
+        elif self.encoder_name.lower() == 'biobert':
+            self.encoder = BioBERT(out_dim, dataset)
+            self.rel = nn.Linear(out_dim, rel_num)
+        else:
+            raise NotImplementedError(f'Encoder name is not valid, please check it')
 
         self.init_weight()
 
 
     def forward(self, data):
         X_Rel = None
-        if self.encoder_name.lower() == 'biobert':
-            if len(data) == 8:
-                X, X_Pos1, X_Pos2, X_Mask, Q_Mask, X_Scope, Q, X_Rel = data
-            else:
-                X, X_Pos1, X_Pos2, X_Mask, Q_Mask, X_Scope, Q = data
-            del data
-            X = torch.cat([X, Q], -1)
-            X_Mask = torch.cat([X_Mask, Q_Mask], -1)
-            del Q, Q_Mask
-            X = self.encoder(X, X_Pos1, X_Pos2, X_Mask)
-        else:
+
+        if self.encoder_name.lower() != 'biobert':
             if len(data) == 8:
                 X, X_Pos1, X_Pos2, X_Mask, X_Len, X_Scope, Q, X_Rel = data
             else:
@@ -92,6 +81,18 @@ class Model(nn.Module):
                 X = self.encoder(X, X_Len)
             elif self.encoder_name == 'BiLSTM':
                 X = self.encoder(X, X_Len)
+        elif self.encoder_name.lower() == 'biobert':
+            if len(data) == 8:
+                X, X_Pos1, X_Pos2, X_Mask, Q_Mask, X_Scope, Q, X_Rel = data
+            else:
+                X, X_Pos1, X_Pos2, X_Mask, Q_Mask, X_Scope, Q = data
+            del data
+            X = torch.cat([X, Q], -1)
+            X_Mask = torch.cat([X_Mask, Q_Mask], -1)
+            del Q, Q_Mask
+            X = self.encoder(X, X_Pos1, X_Pos2, X_Mask)
+        else:
+            raise NotImplementedError(f'Encoder name is not valid, please check it')
 
         X = self.bag_self_att(X, X_Scope)
 
@@ -120,7 +121,7 @@ class Model(nn.Module):
         nn.init.zeros_(self.rel.bias)
 
 
-    def qs_att(self, s, q):   # c is sentence context, q is question
+    def qs_att(self, s, q):   # c is sentence/context, q is auto-generated query
         s_len = s.size(1)     # (batch, s_len, emd_dim)
         q_len = q.size(1)     # (batch, q_len, emd_dim)
         sq = []
