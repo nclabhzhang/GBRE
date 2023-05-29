@@ -7,16 +7,14 @@ import numpy as np
 class Model(nn.Module):
     def __init__(self, pre_word_vec, rel_num, opt):
         super(Model, self).__init__()
-
+        dataset = opt['dataset']
         word_embedding = torch.from_numpy(np.load(pre_word_vec))
 
         hidden_size = opt['hidden_size']
         pos_len = opt['max_pos_length']
         pos_dim = opt['pos_dim']             # 10
         word_dim = word_embedding.shape[1]   # 200
-        que_dim = word_embedding.shape[1]    # 200
         emb_dim = word_dim * 3 + pos_dim * 2
-        dataset = opt['dataset']
 
         self.max_sentence_len = opt['max_sentence_length']
         self.encoder_name = opt['encoder']
