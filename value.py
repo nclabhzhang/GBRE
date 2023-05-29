@@ -6,7 +6,6 @@ import sys
 import random
 import math
 import numpy as np
-import matplotlib.pyplot as plt
 from Net.Model import Model
 from sklearn import metrics
 from data_loader import data_loader
