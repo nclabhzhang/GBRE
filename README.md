@@ -9,8 +9,8 @@ Please cite our paper if our datasets or code are helpful to you ~
 * Transformers 3.0.0
 
 ## Dataset
-* Biorel (https://bit.ly/biorel_dataset)
-* TBGA (https://zenodo.org/record/5911097)
+* [Biorel](https://bit.ly/biorel_dataset)
+* [TBGA](https://zenodo.org/record/5911097)
 
 ## Before Training
 If you want to use TBGA dataset for training GBRE, please convert all the data to Biorel format.
