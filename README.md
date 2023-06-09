@@ -17,7 +17,16 @@ If you want to use TBGA dataset for training GBRE, please convert all the data t
 
 You can get the pretrained word embeddings (biowordvec_mat.npy and biowordvec_word2id.json) of TBGA at https://github.com/GDAMining/gda-extraction.
 
-After making sure all files are in ./data/TBGA, run the processing file：
+Before training TBGA, please make sure the following files in ./data/TBGA:
+
+* biowordvec_mat.npy
+* biowordvec_word2id.json
+* TBGA_rel2id.json
+* TBGA_train.txt
+* TBGA_test.txt
+* TBGA_val.txt
+
+Then, convert the data to Biorel format:
 
 ```bash
 cd ./data
