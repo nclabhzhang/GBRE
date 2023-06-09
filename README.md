@@ -87,6 +87,10 @@ PR curves in our paper are stored in Curves/.
 ]
 ```
 
+## Acknowledgements
+GBRE builds upon the source code from the project CGRE (https://github.com/tmliang/CGRE).
+We thank their contributors and maintainers!
+
 
 
 ## Cite
