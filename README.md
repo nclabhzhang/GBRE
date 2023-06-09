@@ -55,13 +55,6 @@ PR curves in our paper are stored in Curves/.
         },
         "sentence": "algal polysaccharide obtained from carrageenin protects 80 to 100 percent of chicken embryos against fatal infections with the lee strain of influenza virus .",
         "relation": "NA",
-        "lexical_feature0": "algal|polysaccharide|obtained|from|carrageenin|protects",
-        "lexical_feature1": "PAD|algal|polysaccharide|obtained|from|carrageenin|protects|80",
-        "lexical_feature2": "PAD|PAD|algal|polysaccharide|obtained|from|carrageenin|protects|80|to",
-        "syntactic_feature0": "polysaccharide|0|root",
-        "syntactic_feature1": "obtained|1|acl",
-        "syntactic_feature2": "from|4|case",
-        "syntactic_feature3": "carrageenin|2|obl"
     },
     ...
 ]
