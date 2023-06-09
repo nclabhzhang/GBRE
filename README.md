@@ -15,7 +15,7 @@ Please cite our paper if our datasets or code are helpful to you ~
 ## Before Training
 If you want to use TBGA dataset for training GBRE, please convert all the data to Biorel format.
 
-You can get the pretrained word embeddings (biowordvec_mat.npy and biowordvec_word2id.json) of TBGA at (https://github.com/GDAMining/gda-extraction).
+You can get the pretrained word embeddings (biowordvec_mat.npy and biowordvec_word2id.json) of TBGA at https://github.com/GDAMining/gda-extraction.
 
 After making sure all files are in ./data/TBGA, run the processing file：
 
@@ -89,6 +89,7 @@ PR curves in our paper are stored in Curves/.
 
 ## Acknowledgements
 GBRE builds upon the source code from the project CGRE (https://github.com/tmliang/CGRE).
+
 We thank their contributors and maintainers!
 
 
