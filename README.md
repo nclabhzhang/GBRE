@@ -101,9 +101,10 @@ We thank their contributors and maintainers!
 If you use or extend our work, please cite the following:
 
 ```
-@article{gbre-2023,
-  title = "Sentence Bag Graph Formulation for Biomedical Distant Supervision Relation Extraction",
-  author = "H.Zhang, Y. Liu, X. Liu, T. Liang, G. Sharma, L. Xue, and M. Guo",
-  year = "2023",
+@article{zhang2023sentence,
+  title={Sentence Bag Graph Formulation for Biomedical Distant Supervision Relation Extraction},
+  author={Zhang, Hao and Liu, Yang and Liu, Xiaoyan and Liang, Tianming and Sharma, Gaurav and Xue, Liang and Guo, Maozu},
+  journal={arXiv preprint arXiv:2310.18912},
+  year={2023}
 }
 ```
