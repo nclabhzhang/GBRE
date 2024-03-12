@@ -98,14 +98,6 @@ We thank their contributors and maintainers!
 
 ## Cite
 
-If you use or extend our work, please cite the following:
+Please cite our paper if our datasets or code are helpful to you
 
-```
-@article{zhang2023sentence,
-  title={Sentence Bag Graph Formulation for Biomedical Distant Supervision Relation Extraction},
-  author={Zhang, Hao and Liu, Yang and Liu, Xiaoyan and Liang, Tianming and Sharma, Gaurav and Xue, Liang and Guo, Maozu},
-  journal={arXiv preprint arXiv:2310.18912},
-  year={2023}
-}
-```
-Our article has been accepted by IEEE TKDE and we will update the new citation in the near future!
+H. Zhang, Y. Liu, X. Liu, T. Liang, G. Sharma, L. Xue, and M. Guo, ``Sentence bag graph formulation for biomedical distant supervision relation  extraction,'' IEEE Trans. Knowl. Data Eng., 2024, DOI: 10.1109/TKDE.2024.3377229
