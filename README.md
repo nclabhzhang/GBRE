@@ -109,6 +109,6 @@ H. Zhang, Y. Liu, X. Liu, T. Liang, G. Sharma, L. Xue, and M. Guo, "Sentence bag
   title={Sentence Bag Graph Formulation for Biomedical Distant Supervision Relation Extraction}, 
   year={2024},
   pages={1-14},
-  doi={10.1109/TKDE.2024.3377229}},
-  publisher={IEEE}
+  publisher={IEEE},
+  doi={10.1109/TKDE.2024.3377229}}
 ```
