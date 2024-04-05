@@ -1,7 +1,7 @@
 # GBRE
 This repository provides the implemention for the paper Sentence Bag Graph Formulation for Biomedical Distant Supervision Relation Extraction.
 
-Please cite our paper if our datasets or code are helpful to you ~
+Please cite our paper if our datasets or code are helpful to you ~ 😊
 
 ## Requirements
 * Python 3.7
@@ -101,3 +101,14 @@ We thank their contributors and maintainers!
 Please cite our paper if our datasets or code are helpful to you.
 
 H. Zhang, Y. Liu, X. Liu, T. Liang, G. Sharma, L. Xue, and M. Guo, "Sentence bag graph formulation for biomedical distant supervision relation  extraction", IEEE Transactions on Knowledge and Data Engineering, 2024, DOI: 10.1109/TKDE.2024.3377229
+
+```
+@ARTICLE{zhang2024graph,
+  author={Zhang, Hao and Liu, Yang and Liu, Xiaoyan and Liang, Tianming and Sharma, Gaurav and Xue, Liang and Guo, Maozu},
+  journal={IEEE Transactions on Knowledge and Data Engineering}, 
+  title={Sentence Bag Graph Formulation for Biomedical Distant Supervision Relation Extraction}, 
+  year={2024},
+  pages={1-14},
+  doi={10.1109/TKDE.2024.3377229}},
+  publisher={IEEE}
+```
