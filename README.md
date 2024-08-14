@@ -100,7 +100,7 @@ We thank their contributors and maintainers!
 
 Please cite our paper if our datasets or code are helpful to you.
 
-H. Zhang, Y. Liu, X. Liu, T. Liang, G. Sharma, L. Xue, and M. Guo, "Sentence bag graph formulation for biomedical distant supervision relation  extraction", IEEE Transactions on Knowledge and Data Engineering, 2024, DOI: 10.1109/TKDE.2024.3377229
+H. Zhang, Y. Liu, X. Liu, T. Liang, G. Sharma, L. Xue, and M. Guo, "Sentence Bag Graph Formulation for Biomedical Distant Supervision Relation Extraction," in IEEE Transactions on Knowledge and Data Engineering, vol. 36, no. 9, pp. 4890-4903, Sept. 2024, doi: 10.1109/TKDE.2024.3377229.
 
 ```
 @ARTICLE{zhang2024graph,
@@ -108,7 +108,8 @@ H. Zhang, Y. Liu, X. Liu, T. Liang, G. Sharma, L. Xue, and M. Guo, "Sentence bag
   journal={IEEE Transactions on Knowledge and Data Engineering}, 
   title={Sentence Bag Graph Formulation for Biomedical Distant Supervision Relation Extraction}, 
   year={2024},
-  pages={1-14},
-  publisher={IEEE},
+  volume={36},
+  number={9},
+  pages={4890-4903},
   doi={10.1109/TKDE.2024.3377229}}
 ```
